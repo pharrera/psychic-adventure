@@ -3,8 +3,7 @@ from sqlalchemy import Column, Integer, UniqueConstraint, Identity
 from sqlalchemy import String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from typing import List                 # Use this for the list of courses offered by the department
-from Major import Major
-from Course import Course
+
 
 class Department(Base):
     """An organization within a particular college within a university.  Each
