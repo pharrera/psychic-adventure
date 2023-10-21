@@ -1,6 +1,6 @@
 import logging
 from constants import *
-from menu_definitions import menu_main, add_menu, delete_menu, list_menu, debug_select, introspection_select
+from menu_definitions import menu_main, add_menu, delete_menu, list_menu, debug_select, introspection_select, enrollment_menu
 from IntrospectionFactory import IntrospectionFactory
 from db_connection import engine, Session
 from orm_base import metadata

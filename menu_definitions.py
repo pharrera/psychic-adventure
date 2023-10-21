@@ -32,6 +32,30 @@ add_menu = Menu('add', 'Please indicate what you want to add:', [
     Option("Major to Student", "add_major_student(sess)"),
     Option("Exit", "pass")
 ])
+# Enrollment Menu
+enrollment_menu = Menu('enrollment', 'Please indicate the enrollment operation you want to perform:', [
+    Option("Enroll a Student by adding a Section", "enroll_student_by_section(sess)"),
+    Option("Enroll by adding a Student to a Section", "enroll_section_by_student(sess)"),
+    Option("Unenroll a student starting with the student", "unenroll_student_from_section(sess)"),
+    Option("Unenroll a student starting with the section", "unenroll_section_by_student(sess)"),
+    Option("List student's sections", "list_student_sections(sess)"),
+    Option("List section's students", "list_section_students(sess)"),
+    Option("Delete a Section", "delete_section(sess)"),
+    Option("Delete a Student", "delete_student_with_check(sess)"),
+    Option("Exit", "pass")
+])
+
+# Update the main menu to include the new Enrollment Menu
+menu_main = Menu('main', 'Please select one of the following options:', [
+    Option("Add", "add(sess)"),
+    Option("List", "list_objects(sess)"),
+    Option("Delete", "delete(sess)"),
+    Option("Enrollment", "enrollment_menu.menu_prompt()"),  # Newly added
+    Option("Boilerplate Data", "boilerplate(sess)"),
+    Option("Commit", "sess.commit()"),
+    Option("Rollback", "session_rollback(sess)"),
+    Option("Exit this application", "pass")
+])
 
 delete_menu = Menu('delete', 'Please indicate what you want to delete from:', [
     Option("Department", "delete_department(sess)"),
@@ -66,3 +90,4 @@ introspection_select = Menu("introspection selectt", 'To introspect or not:', [
 #   Option("Reuse tables", INTROSPECT_TABLES),
     Option("Reuse without introspection", REUSE_NO_INTROSPECTION)
 ])
+

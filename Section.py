@@ -38,11 +38,13 @@ class Section(Base):
         """Get all students enrolled in this section."""
         return [e.student for e in self.enrollments]
 
-    def remove_enrollment(self, student):
+    def remove_enrollment(self, student, session):
         """Remove an enrollment of a student from this section."""
         for enrollment in self.enrollments:
             if enrollment.student == student:
                 self.enrollments.remove(enrollment)
+                session.delete(enrollment)
+                session.commit()
                 break
 
     def has_enrollments(self):
